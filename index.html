@@ -8,93 +8,132 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: linear-gradient(160deg, #fce4c8 0%, #fde8c8 20%, #fdd5a0 45%, #fbc688 65%, #f8b070 85%, #f5a060 100%);
             min-height: 100vh;
-            color: #e0e0e0;
+            color: #4a3728;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 920px; margin: 0 auto; padding: 30px 20px 50px; }
+
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
         header h1 {
-            font-size: 2.2em;
-            color: #fff;
+            font-size: 2.4em;
+            font-weight: 800;
             margin-bottom: 8px;
+            background: linear-gradient(135deg, #e8601a, #ff8c42, #ffb347, #e8601a);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s ease-in-out infinite;
         }
-        header h1 .pink { color: #fb7299; }
-        header h1 .blue { color: #00a1d6; }
-        header p { color: #888; font-size: 0.95em; }
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        header h1 .ampersand {
+            font-weight: 300;
+            font-size: 0.7em;
+            -webkit-text-fill-color: #c07030;
+            padding: 0 4px;
+        }
+        header p {
+            color: #8a6a4a;
+            font-size: 0.95em;
+            letter-spacing: 1px;
+        }
         .stats {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 16px;
+            gap: 25px;
+            margin-top: 14px;
             font-size: 0.9em;
-            color: #aaa;
+            color: #7a5a3a;
         }
-        .stats strong { color: #fb7299; }
-        
+        .stats strong { color: #e8601a; }
+
         .intro {
             text-align: center;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid #2a2a3e;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 40px;
+            background: rgba(255,248,240,0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(232,96,26,0.2);
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 35px;
             font-size: 0.9em;
-            color: #aaa;
+            color: #7a5a3a;
             line-height: 1.8;
+        }
+        .tag-live {
+            display: inline-block;
+            background: #e8601a;
+            color: #fff;
+            padding: 1px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+        .tag-react {
+            display: inline-block;
+            background: #ffb347;
+            color: #fff;
+            padding: 1px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
         }
 
         .date-group {
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
         .date-group h2 {
-            font-size: 1.2em;
-            color: #fb7299;
+            font-size: 1.15em;
             padding-bottom: 10px;
-            border-bottom: 1px solid #333;
-            margin-bottom: 16px;
+            border-bottom: 2px solid rgba(232,96,26,0.2);
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
             gap: 10px;
+            flex-wrap: wrap;
+        }
+        .date-group h2 .date-badge {
+            background: linear-gradient(135deg, #e8601a, #ff8c42);
+            color: #fff;
+            font-size: 0.75em;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-weight: 600;
         }
         .date-group h2 .tag {
-            background: #fb7299;
+            background: #ffb347;
             color: #fff;
             font-size: 0.6em;
             padding: 2px 10px;
             border-radius: 20px;
         }
-        .date-group h2 .date-badge {
-            background: #00a1d6;
-            color: #fff;
-            font-size: 0.7em;
-            padding: 3px 12px;
-            border-radius: 20px;
-        }
+        .date-group h2 .tag.orange { background: #e8601a; }
 
         .video-card {
             display: flex;
             align-items: center;
-            gap: 15px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid #2a2a3e;
-            border-radius: 12px;
-            padding: 14px 18px;
+            gap: 14px;
+            background: rgba(255,248,240,0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(232,96,26,0.15);
+            border-radius: 14px;
+            padding: 13px 16px;
             margin-bottom: 10px;
             transition: all 0.25s ease;
         }
         .video-card:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: #fb7299;
-            transform: translateX(4px);
+            background: rgba(255,248,240,0.9);
+            border-color: rgba(232,96,26,0.4);
+            transform: translateX(5px);
+            box-shadow: 0 4px 16px rgba(232,96,26,0.12);
         }
         .video-card .num {
             width: 30px;
             height: 30px;
-            background: #fb7299;
+            background: linear-gradient(135deg, #e8601a, #ffb347);
             color: #fff;
             border-radius: 50%;
             display: flex;
@@ -109,52 +148,58 @@
             min-width: 0;
         }
         .video-card .info .title {
-            color: #fff;
-            font-weight: 500;
-            margin-bottom: 4px;
-            font-size: 0.95em;
+            color: #4a3728;
+            font-weight: 600;
+            margin-bottom: 3px;
+            font-size: 0.93em;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
         .video-card .info .meta {
-            font-size: 0.8em;
-            color: #888;
+            font-size: 0.78em;
+            color: #9a7a5a;
         }
         .video-card a {
-            color: #fb7299;
+            color: #e8601a;
             text-decoration: none;
-            font-size: 0.85em;
+            font-size: 0.83em;
             padding: 6px 16px;
-            border: 1px solid #fb7299;
+            border: 1.5px solid #e8601a;
             border-radius: 20px;
             transition: all 0.2s;
             white-space: nowrap;
             flex-shrink: 0;
+            font-weight: 500;
         }
         .video-card a:hover {
-            background: #fb7299;
+            background: linear-gradient(135deg, #e8601a, #ff8c42);
             color: #fff;
+            border-color: transparent;
         }
-        .video-card .multi-link {
-            display: flex;
-            gap: 6px;
-            flex-shrink: 0;
+
+        .sun-divider {
+            text-align: center;
+            margin: 10px 0 30px;
+            font-size: 1.2em;
+            opacity: 0.4;
+            letter-spacing: 6px;
         }
-        .video-card .multi-link a {
-            font-size: 0.75em;
-            padding: 4px 10px;
-        }
-        .tag-live { color: #ff6699; font-size: 0.75em; }
-        .tag-react { color: #ffa940; font-size: 0.75em; }
 
         footer {
             text-align: center;
-            margin-top: 60px;
+            margin-top: 50px;
             padding-top: 20px;
-            border-top: 1px solid #222;
-            color: #555;
+            border-top: 1px solid rgba(232,96,26,0.15);
+            color: #9a7a5a;
             font-size: 0.85em;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8em; }
+            .video-card { flex-wrap: wrap; padding: 12px; }
+            .video-card a { width: 100%; text-align: center; margin-top: 4px; }
+            .video-card .info .title { white-space: normal; }
         }
     </style>
 </head>
@@ -162,23 +207,22 @@
 <div class="container">
 
 <header>
-    <h1>🎤 <span class="pink">希</span><span class="blue">朝</span> · 直播时间线</h1>
-    <p>何昶希 &amp; 何衍朝 · 直播录屏合集 · 持续更新</p>
+    <h1>☀️ <span class="ampersand">&</span> 🌅<br>希朝 · 直播时间线</h1>
+    <p>何昶希 ✦ 何衍朝 · 直播录屏合集 · 持续更新</p>
     <div class="stats">
         <span>覆盖 <strong id="totalDates">0</strong> 场直播</span>
         <span>共 <strong id="totalVideos">0</strong> 个视频</span>
-        <span>更新于 <span id="updateDate">-</span></span>
     </div>
 </header>
 
 <div class="intro">
-    🎯 按直播时间整理，每场挑选最完整版本<br>
-    🏷️ <span class="tag-live">● 直播录屏</span> ｜ <span class="tag-react">● Reaction/剪辑</span>
+    <span class="tag-live">● 直播录屏</span>　<span class="tag-react">● 反应/剪辑</span><br>
+    按直播时间整理，每场挑选最完整版本
 </div>
 
 <div id="content"></div>
 
-<footer>Made with 💗 for 希希朝朝</footer>
+<footer>太阳橘 ✦ 日落黄 · 为希希朝朝</footer>
 </div>
 
 <script>
@@ -191,7 +235,6 @@ const videos = [
         up: "没有昵称y-",
         type: "live"
     },
-
     // ====== 2026年5月 ======
     {
         date: "2026-05-13", label: "2026.05.13",
@@ -207,7 +250,6 @@ const videos = [
         up: "快乐小饼干儿",
         type: "react"
     },
-
     // ====== 2026年6月6日 ======
     {
         date: "2026-06-06", label: "2026.06.06",
@@ -237,23 +279,21 @@ const videos = [
         up: "酒香团团",
         type: "react"
     },
-
     // ====== 2026年6月10日 ======
     {
         date: "2026-06-10", label: "2026.06.10",
-        title: "【希朝】和通讯录师兄哥re戛纳直播 | 走心了走心了",
+        title: "【希朝】和通讯录师兄哥re戛纳直播",
         url: "BV1w5E96MEpV",
         up: "伊丽莎白的夏尔",
         type: "react"
     },
     {
         date: "2026-06-10", label: "2026.06.10",
-        title: "【希朝】260612全民K歌双人直播（提前存）",
+        title: "【希朝】260612全民K歌双人直播",
         url: "BV1C5E96ME7m",
         up: "万出穗",
         type: "live"
     },
-
     // ====== 2026年6月12日 ======
     {
         date: "2026-06-12", label: "2026.06.12",
@@ -311,7 +351,6 @@ const videos = [
         up: "幸运的多多",
         type: "live"
     },
-
     // ====== 6月12日reaction ======
     {
         date: "2026-06-13", label: "2026.06.13",
@@ -334,8 +373,7 @@ const videos = [
         up: "李峋_Arthur",
         type: "react"
     },
-
-    // ====== 6月14日 reaction ======
+    // ====== 6月14日 ======
     {
         date: "2026-06-14", label: "2026.06.14",
         title: "【希朝相伴直播reaction】第一场直播",
@@ -371,7 +409,6 @@ const videos = [
         up: "江江在哪",
         type: "react"
     },
-
     // ====== 6月15-16日 ======
     {
         date: "2026-06-15", label: "2026.06.15",
@@ -389,7 +426,7 @@ const videos = [
     },
     {
         date: "2026-06-15", label: "2026.06.15",
-        title: "Wuli朝朝探班日记 | 下次直播何伟嘚瑟地讲",
+        title: "Wuli朝朝探班日记",
         url: "BV1vsJG6VEJk",
         up: "月上柳梢头的夜",
         type: "react"
@@ -426,26 +463,18 @@ const videos = [
 
 // ====== 渲染 ======
 function render() {
-    const now = new Date();
-    document.getElementById('updateDate').textContent =
-        now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
-
-    // Group by date
     const groups = {};
     videos.forEach(v => {
         if (!groups[v.date]) groups[v.date] = [];
         groups[v.date].push(v);
     });
 
-    // Sort dates descending
     const sortedDates = Object.keys(groups).sort().reverse();
-
     document.getElementById('totalDates').textContent = sortedDates.length;
     document.getElementById('totalVideos').textContent = videos.length;
 
     const container = document.getElementById('content');
     container.innerHTML = '';
-
     let globalIdx = 0;
 
     sortedDates.forEach(date => {
@@ -454,12 +483,11 @@ function render() {
         const section = document.createElement('div');
         section.className = 'date-group';
 
-        // Count types
         const liveCount = items.filter(v => v.type === 'live').length;
         const reactCount = items.filter(v => v.type === 'react').length;
         let typeTags = '';
-        if (liveCount > 0) typeTags += `<span class="tag">${liveCount} 录屏</span>`;
-        if (reactCount > 0) typeTags += `<span class="tag" style="background:#ffa940">${reactCount} 反应</span>`;
+        if (liveCount > 0) typeTags += `<span class="tag orange">${liveCount} 录屏</span>`;
+        if (reactCount > 0) typeTags += `<span class="tag">${reactCount} 反应</span>`;
 
         const heading = document.createElement('h2');
         heading.innerHTML = `<span class="date-badge">${label}</span> ${typeTags}`;
@@ -470,7 +498,6 @@ function render() {
             const fullUrl = v.url.startsWith('http') ? v.url : `https://www.bilibili.com/video/${v.url}`;
             const card = document.createElement('div');
             card.className = 'video-card';
-
             const typeIcon = v.type === 'live' ? '🔴' : '🟡';
             const typeLabel = v.type === 'live' ? '直播录屏' : 'Reaction';
 
@@ -478,17 +505,15 @@ function render() {
                 <div class="num">${globalIdx}</div>
                 <div class="info">
                     <div class="title">${typeIcon} ${v.title}</div>
-                    <div class="meta">UP: ${v.up || '未知'} ｜ ${typeLabel}</div>
+                    <div class="meta">${v.up || '未知'} · ${typeLabel}</div>
                 </div>
                 <a href="${fullUrl}" target="_blank" rel="noopener">▶ 观看</a>
             `;
             section.appendChild(card);
         });
-
         container.appendChild(section);
     });
 }
-
 render();
 </script>
 </body>
