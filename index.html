@@ -14,186 +14,114 @@
         }
         .container { max-width: 920px; margin: 0 auto; padding: 30px 20px 50px; }
 
-        header {
-            text-align: center;
-            margin-bottom: 35px;
-        }
+        header { text-align: center; margin-bottom: 30px; }
         header h1 {
-            font-size: 2.4em;
-            font-weight: 800;
-            margin-bottom: 8px;
+            font-size: 2.2em; font-weight: 800;
             background: linear-gradient(135deg, #e8601a, #ff8c42, #ffb347, #e8601a);
             background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             animation: shimmer 4s ease-in-out infinite;
         }
-        @keyframes shimmer {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        header h1 .ampersand {
-            font-weight: 300;
-            font-size: 0.7em;
-            -webkit-text-fill-color: #c07030;
-            padding: 0 4px;
-        }
-        header p {
-            color: #8a6a4a;
-            font-size: 0.95em;
-            letter-spacing: 1px;
-        }
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 14px;
-            font-size: 0.9em;
-            color: #7a5a3a;
-        }
+        @keyframes shimmer { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+        header p { color: #8a6a4a; font-size: 0.95em; letter-spacing: 1px; }
+        .stats { display: flex; justify-content: center; gap: 25px; margin-top: 10px; font-size: 0.9em; color: #7a5a3a; }
         .stats strong { color: #e8601a; }
 
-        .intro {
-            text-align: center;
-            background: rgba(255,248,240,0.7);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(232,96,26,0.2);
-            border-radius: 16px;
-            padding: 18px;
-            margin-bottom: 35px;
-            font-size: 0.9em;
-            color: #7a5a3a;
-            line-height: 1.8;
+        .toolbar {
+            display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap;
         }
-        .tag-live {
-            display: inline-block;
-            background: #e8601a;
-            color: #fff;
-            padding: 1px 10px;
-            border-radius: 12px;
-            font-size: 0.8em;
+        .toolbar button {
+            background: #fff; border: 1.5px solid #e8601a; color: #e8601a;
+            padding: 8px 20px; border-radius: 20px; cursor: pointer; font-size: 0.85em;
+            transition: all 0.2s; font-weight: 500;
         }
-        .tag-react {
-            display: inline-block;
-            background: #ffb347;
-            color: #fff;
-            padding: 1px 10px;
-            border-radius: 12px;
-            font-size: 0.8em;
-        }
+        .toolbar button:hover { background: #e8601a; color: #fff; }
+        .toolbar button.active { background: #e8601a; color: #fff; }
+        .toolbar .hint { color: #9a7a5a; font-size: 0.8em; align-self: center; }
 
-        .date-group {
-            margin-bottom: 35px;
-        }
+        .date-group { margin-bottom: 35px; }
         .date-group h2 {
-            font-size: 1.15em;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(232,96,26,0.2);
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
+            font-size: 1.15em; padding-bottom: 10px;
+            border-bottom: 2px solid rgba(232,96,26,0.2); margin-bottom: 14px;
+            display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
         }
         .date-group h2 .date-badge {
-            background: linear-gradient(135deg, #e8601a, #ff8c42);
-            color: #fff;
-            font-size: 0.75em;
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-weight: 600;
+            background: linear-gradient(135deg, #e8601a, #ff8c42); color: #fff;
+            font-size: 0.75em; padding: 4px 16px; border-radius: 20px; font-weight: 600;
         }
         .date-group h2 .tag {
-            background: #ffb347;
-            color: #fff;
-            font-size: 0.6em;
-            padding: 2px 10px;
-            border-radius: 20px;
+            background: #ffb347; color: #fff; font-size: 0.6em; padding: 2px 10px; border-radius: 20px;
         }
-        .date-group h2 .tag.orange { background: #e8601a; }
+        .date-group h2 .tag.live { background: #e8601a; }
 
         .video-card {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            background: rgba(255,248,240,0.6);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(232,96,26,0.15);
-            border-radius: 14px;
-            padding: 13px 16px;
-            margin-bottom: 10px;
-            transition: all 0.25s ease;
+            display: flex; align-items: center; gap: 14px;
+            background: rgba(255,248,240,0.6); border: 1px solid rgba(232,96,26,0.15);
+            border-radius: 14px; padding: 13px 16px; margin-bottom: 10px;
+            transition: all 0.25s ease; position: relative;
         }
         .video-card:hover {
-            background: rgba(255,248,240,0.9);
-            border-color: rgba(232,96,26,0.4);
-            transform: translateX(5px);
-            box-shadow: 0 4px 16px rgba(232,96,26,0.12);
+            background: rgba(255,248,240,0.9); border-color: rgba(232,96,26,0.4);
+            transform: translateX(5px); box-shadow: 0 4px 16px rgba(232,96,26,0.12);
         }
         .video-card .num {
-            width: 30px;
-            height: 30px;
-            background: linear-gradient(135deg, #e8601a, #ffb347);
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8em;
-            font-weight: bold;
-            flex-shrink: 0;
+            width: 30px; height: 30px;
+            background: linear-gradient(135deg, #e8601a, #ffb347); color: #fff;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 0.8em; font-weight: bold; flex-shrink: 0;
         }
-        .video-card .info {
-            flex: 1;
-            min-width: 0;
-        }
-        .video-card .info .title {
-            color: #4a3728;
-            font-weight: 600;
-            margin-bottom: 3px;
-            font-size: 0.93em;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .video-card .info .meta {
-            font-size: 0.78em;
-            color: #9a7a5a;
-        }
+        .video-card .info { flex: 1; min-width: 0; }
+        .video-card .info .title { color: #4a3728; font-weight: 600; margin-bottom: 3px; font-size: 0.93em; }
+        .video-card .info .meta { font-size: 0.78em; color: #9a7a5a; }
         .video-card a {
-            color: #e8601a;
-            text-decoration: none;
-            font-size: 0.83em;
-            padding: 6px 16px;
-            border: 1.5px solid #e8601a;
-            border-radius: 20px;
+            color: #e8601a; text-decoration: none; font-size: 0.83em;
+            padding: 6px 16px; border: 1.5px solid #e8601a; border-radius: 20px;
+            transition: all 0.2s; white-space: nowrap; flex-shrink: 0; font-weight: 500;
+        }
+        .video-card a:hover { background: linear-gradient(135deg, #e8601a, #ff8c42); color: #fff; border-color: transparent; }
+
+        /* 编辑模式样式 */
+        .edit-mode .video-card { cursor: pointer; border-style: dashed; }
+        .edit-mode .video-card:hover { border-color: #e8601a; background: rgba(255,248,240,0.95); }
+        .edit-btn-group {
+            display: none; gap: 6px; flex-shrink: 0;
+        }
+        .edit-mode .edit-btn-group { display: flex; }
+        .edit-btn-group button {
+            background: none; border: 1px solid #ccc; border-radius: 8px;
+            padding: 4px 10px; cursor: pointer; font-size: 0.75em; color: #666;
             transition: all 0.2s;
-            white-space: nowrap;
-            flex-shrink: 0;
-            font-weight: 500;
         }
-        .video-card a:hover {
-            background: linear-gradient(135deg, #e8601a, #ff8c42);
-            color: #fff;
-            border-color: transparent;
-        }
+        .edit-btn-group button:hover { border-color: #e8601a; color: #e8601a; }
+        .edit-btn-group .del:hover { border-color: #e00; color: #e00; }
 
-        .sun-divider {
-            text-align: center;
-            margin: 10px 0 30px;
-            font-size: 1.2em;
-            opacity: 0.4;
-            letter-spacing: 6px;
+        /* 编辑面板 */
+        .edit-panel {
+            display: none; background: #fff; border-radius: 16px;
+            padding: 24px; margin-bottom: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
+        .edit-panel.show { display: block; }
+        .edit-panel h3 { margin-bottom: 15px; color: #e8601a; }
+        .edit-panel label { display: block; margin-bottom: 5px; font-size: 0.85em; color: #666; }
+        .edit-panel input, .edit-panel select, .edit-panel textarea {
+            width: 100%; padding: 10px 12px; margin-bottom: 12px; border: 1px solid #ddd;
+            border-radius: 10px; font-size: 0.9em; font-family: inherit;
+        }
+        .edit-panel textarea { height: 60px; resize: vertical; }
+        .edit-panel .btn-row { display: flex; gap: 10px; }
+        .edit-panel .btn-row button {
+            flex: 1; padding: 10px; border-radius: 10px; cursor: pointer;
+            font-size: 0.9em; font-weight: 600; border: none; transition: all 0.2s;
+        }
+        .edit-panel .btn-row .save { background: #e8601a; color: #fff; }
+        .edit-panel .btn-row .save:hover { background: #d05000; }
+        .edit-panel .btn-row .cancel { background: #eee; color: #666; }
+        .edit-panel .btn-row .cancel:hover { background: #ddd; }
 
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(232,96,26,0.15);
-            color: #9a7a5a;
-            font-size: 0.85em;
-        }
+        .edit-panel .import-area { margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; }
+        .edit-panel .import-area textarea { height: 120px; font-family: monospace; font-size: 0.8em; }
+
+        footer { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(232,96,26,0.15); color: #9a7a5a; font-size: 0.85em; }
 
         @media (max-width: 600px) {
             header h1 { font-size: 1.8em; }
@@ -207,17 +135,48 @@
 <div class="container">
 
 <header>
-    <h1>☀️ <span class="ampersand">&</span> 🌅<br>希朝 · 直播时间线</h1>
-    <p>何昶希 ✦ 何衍朝 · 直播录屏合集 · 持续更新</p>
+    <h1>☀️ & 🌅<br>希朝 · 直播时间线</h1>
+    <p>何昶希 ✦ 何衍朝 · 直播录屏合集</p>
     <div class="stats">
-        <span>覆盖 <strong id="totalDates">0</strong> 场直播</span>
         <span>共 <strong id="totalVideos">0</strong> 个视频</span>
     </div>
 </header>
 
-<div class="intro">
-    <span class="tag-live">● 直播录屏</span>　<span class="tag-react">● 反应/剪辑</span><br>
-    按直播时间整理，每场挑选最完整版本
+<div class="toolbar">
+    <button id="btnEdit" onclick="toggleEdit()">✏️ 编辑模式</button>
+    <button id="btnExport" onclick="exportData()">💾 导出数据</button>
+    <span class="hint">编辑模式可点按卡片修改/删除</span>
+</div>
+
+<div id="editPanel" class="edit-panel">
+    <h3 id="panelTitle">➕ 添加新视频</h3>
+    <label>直播日期</label>
+    <input type="date" id="editDate">
+    <label>视频标题</label>
+    <input id="editTitle" placeholder="例: 【希朝】6.12直播全程">
+    <label>B站BV号或完整链接</label>
+    <input id="editUrl" placeholder="例: BV13iJ56CEpv 或 https://...">
+    <label>UP主</label>
+    <input id="editUp" placeholder="上传者昵称">
+    <label>类型</label>
+    <select id="editType">
+        <option value="live">🔴 直播录屏</option>
+        <option value="react">🟡 反应/剪辑</option>
+    </select>
+    <div class="btn-row">
+        <button class="save" onclick="saveVideo()">💾 保存</button>
+        <button class="cancel" onclick="cancelEdit()">取消</button>
+    </div>
+    <input type="hidden" id="editIndex" value="-1">
+
+    <div class="import-area">
+        <label>📥 导入/导出全部数据（JSON格式，管理员用）</label>
+        <textarea id="jsonData" placeholder='[{"date":"2026-06-12","title":"...","url":"...","up":"...","type":"live"}]'></textarea>
+        <div class="btn-row">
+            <button class="save" onclick="importData()">📥 导入</button>
+            <button class="cancel" onclick="document.getElementById('jsonData').value=JSON.stringify(videos,null,2)">📋 生成JSON</button>
+        </div>
+    </div>
 </div>
 
 <div id="content"></div>
@@ -226,240 +185,61 @@
 </div>
 
 <script>
-const videos = [
-    // ====== 2025年 ======
-    {
-        date: "2025-08-05", label: "2025.08.05",
-        title: "【顾盼生香】何昶希 张楚寒直播",
-        url: "BV1BatJzgEBs",
-        up: "没有昵称y-",
-        type: "live"
-    },
-    // ====== 2026年5月 ======
-    {
-        date: "2026-05-13", label: "2026.05.13",
-        title: "【希朝】5.13戛纳直播 ins全程（自存档）",
-        url: "BV1FT7r6hEvg",
-        up: "老友一杯酒",
-        type: "live"
-    },
-    {
-        date: "2026-05-23", label: "2026.05.23",
-        title: "希希朝朝泰国520直播reaction！和戛纳一起甜度满分！",
-        url: "BV1AujN68EYz",
-        up: "快乐小饼干儿",
-        type: "react"
-    },
-    // ====== 2026年6月6日 ======
-    {
-        date: "2026-06-06", label: "2026.06.06",
-        title: "【希朝】6.6居家直播 ins+视频号 双视角拼接版全程",
-        url: "BV1YpEs6uEDY",
-        up: "Ruannoilt",
-        type: "live"
-    },
-    {
-        date: "2026-06-06", label: "2026.06.06",
-        title: "【希朝】20260606 IG直播完整版",
-        url: "BV1jsEJ6YEQ1",
-        up: "是Da璟子啊",
-        type: "live"
-    },
-    {
-        date: "2026-06-06", label: "2026.06.06",
-        title: "【希朝】20260606 视频号直播完整版",
-        url: "BV1ZHEJ6eEdL",
-        up: "是Da璟子啊",
-        type: "live"
-    },
-    {
-        date: "2026-06-06", label: "2026.06.06",
-        title: "【希朝相伴】6.6双人直播 全程",
-        url: "BV1sNEJ6jEXh",
-        up: "酒香团团",
-        type: "react"
-    },
-    // ====== 2026年6月10日 ======
-    {
-        date: "2026-06-10", label: "2026.06.10",
-        title: "【希朝】和通讯录师兄哥re戛纳直播",
-        url: "BV1w5E96MEpV",
-        up: "伊丽莎白的夏尔",
-        type: "react"
-    },
-    {
-        date: "2026-06-10", label: "2026.06.10",
-        title: "【希朝】260612全民K歌双人直播",
-        url: "BV1C5E96ME7m",
-        up: "万出穗",
-        type: "live"
-    },
-    // ====== 2026年6月12日 ======
-    {
-        date: "2026-06-12", label: "2026.06.12",
-        title: "【希朝】6.12双人直播全程高清完整版（带中字字幕）",
-        url: "BV13iJ56CEpv",
-        up: "何如存在",
-        type: "live"
-    },
-    {
-        date: "2026-06-12", label: "2026.06.12",
-        title: "6.12 全民K歌希朝双人直播录屏",
-        url: "BV1BJJ56sEz4",
-        up: "锅啊锅",
-        type: "live"
-    },
-    {
-        date: "2026-06-12", label: "2026.06.12",
-        title: "【希希朝朝】全民k歌歌房直播全程 字幕版",
-        url: "BV1jWJ56QEQR",
-        up: "他是他的ta",
-        type: "live"
-    },
-    {
-        date: "2026-06-12", label: "2026.06.12",
-        title: "何昶希&何衍朝 2026.6.12 全民K歌直播",
-        url: "BV1EnJ569E5q",
-        up: "咕咕CYL",
-        type: "live"
-    },
-    {
-        date: "2026-06-12", label: "2026.06.12",
-        title: "希朝｜20260612 QQ音乐/全民k歌歌房直播完整版",
-        url: "BV15bJ56EEYk",
-        up: "是Da璟子啊",
-        type: "live"
-    },
-    {
-        date: "2026-06-12", label: "2026.06.12",
-        title: "6月12日全民k歌直播 何昶希何衍朝",
-        url: "BV1w9J56wENa",
-        up: "EX宝",
-        type: "live"
-    },
-    {
-        date: "2026-06-12", label: "2026.06.12",
-        title: "何昶希&何衍朝2026.6.12全民K歌直播",
-        url: "BV17nJ569E3b",
-        up: "Rain小雨yu",
-        type: "live"
-    },
-    {
-        date: "2026-06-12", label: "2026.06.12",
-        title: "6.12《极昼HE·RiZON》专辑直播 | 希希朝朝合唱",
-        url: "BV1AFJJ6CECr",
-        up: "幸运的多多",
-        type: "live"
-    },
-    // ====== 6月12日reaction ======
-    {
-        date: "2026-06-13", label: "2026.06.13",
-        title: "0612直播🍬｜两人大搞灯下黑那套",
-        url: "BV1FAJJ6rE19",
-        up: "每日一嗑QAQ",
-        type: "react"
-    },
-    {
-        date: "2026-06-13", label: "2026.06.13",
-        title: "0612直播丨何伟不语，只是一味地忙碌",
-        url: "BV1R5JJ6AEoW",
-        up: "放羊的人在熟睡__",
-        type: "react"
-    },
-    {
-        date: "2026-06-13", label: "2026.06.13",
-        title: "【希朝361】HW朝管严 / 何伟又美了 / 何伟高攻低防",
-        url: "BV1MCEg6bE2x",
-        up: "李峋_Arthur",
-        type: "react"
-    },
-    // ====== 6月14日 ======
-    {
-        date: "2026-06-14", label: "2026.06.14",
-        title: "【希朝相伴直播reaction】第一场直播",
-        url: "BV1AiJK6rEX7",
-        up: "什么都爱磕kk",
-        type: "react"
-    },
-    {
-        date: "2026-06-14", label: "2026.06.14",
-        title: "【存档 希朝 收官场直播浓缩版】",
-        url: "BV1x2JA6TEqZ",
-        up: "不挑酱和事儿多君",
-        type: "react"
-    },
-    {
-        date: "2026-06-14", label: "2026.06.14",
-        title: "【希希朝朝】全民K歌直播同事哥又暴言暴语",
-        url: "BV1VGJP6nEV1",
-        up: "小7嗑糖补给站",
-        type: "react"
-    },
-    {
-        date: "2026-06-14", label: "2026.06.14",
-        title: "回看第一次直播的朝朝，一秒爱上小黑狗",
-        url: "BV1uAJN6LEGR",
-        up: "梨栗笠狸",
-        type: "react"
-    },
-    {
-        date: "2026-06-14", label: "2026.06.14",
-        title: "【希朝铁锅炖直播】双人嘴炮相声流reaction",
-        url: "BV13XJs6kE8d",
-        up: "江江在哪",
-        type: "react"
-    },
-    // ====== 6月15-16日 ======
-    {
-        date: "2026-06-15", label: "2026.06.15",
-        title: "260612｜希朝全民k歌直播全程",
-        url: "BV1z8Ju6GEcC",
-        up: "某耶也_",
-        type: "live"
-    },
-    {
-        date: "2026-06-15", label: "2026.06.15",
-        title: "何昶希0615肌肤未来快问快答",
-        url: "BV1SvjN6rEVm",
-        up: "_JNC_",
-        type: "live"
-    },
-    {
-        date: "2026-06-15", label: "2026.06.15",
-        title: "Wuli朝朝探班日记",
-        url: "BV1vsJG6VEJk",
-        up: "月上柳梢头的夜",
-        type: "react"
-    },
-    {
-        date: "2026-06-16", label: "2026.06.16",
-        title: "希希朝朝香港直播reaction！想要报警的程度……",
-        url: "BV1nmjG62EDd",
-        up: "快乐小饼干儿",
-        type: "react"
-    },
-    {
-        date: "2026-06-16", label: "2026.06.16",
-        title: "本场直播属于不另外加梗也已是next level",
-        url: "BV1X2jV6KEqx",
-        up: "大份辣炒干锅兔",
-        type: "react"
-    },
-    {
-        date: "2026-06-16", label: "2026.06.16",
-        title: "【361直播2reaction】物料就像海绵里的水",
-        url: "BV1b4jg6pE5G",
-        up: "大力水手不吃菠菜DD",
-        type: "react"
-    },
-    {
-        date: "2026-06-16", label: "2026.06.16",
-        title: "一些直播回顾之杀青kisskiss",
-        url: "BV1psjP68EZf",
-        up: "小鱼泡泡泡泡面",
-        type: "react"
-    }
+// ====== 默认数据 ======
+const DEFAULT_VIDEOS = [
+  { date:"2025-08-05", title:"【顾盼生香】何昶希 张楚寒直播20250805", url:"BV1BatJzgEBs", up:"没有昵称y-", type:"live" },
+  { date:"2026-05-13", title:"【希朝】5.13戛纳直播 ins全程", url:"BV1FT7r6hEvg", up:"老友一杯酒", type:"live" },
+  { date:"2026-05-20", title:"希希朝朝泰国520直播reaction", url:"BV1AujN68EYz", up:"快乐小饼干儿", type:"react" },
+  { date:"2026-05-23", title:"本场直播属于不另外加梗也已是next level", url:"BV1X2jV6KEqx", up:"大份辣炒干锅兔", type:"react" },
+  { date:"2026-06-06", title:"【希朝】6.6居家直播 ins+视频号 双视角拼接版全程", url:"BV1YpEs6uEDY", up:"Ruannoilt", type:"live" },
+  { date:"2026-06-06", title:"【希朝】20260606 IG直播完整版", url:"BV1jsEJ6YEQ1", up:"是Da璟子啊", type:"live" },
+  { date:"2026-06-06", title:"【希朝】20260606 视频号直播完整版", url:"BV1ZHEJ6eEdL", up:"是Da璟子啊", type:"live" },
+  { date:"2026-06-06", title:"【希朝相伴】6.6双人直播 全程", url:"BV1sNEJ6jEXh", up:"酒香团团", type:"react" },
+  { date:"2026-06-06", title:"Wuli朝朝探班日记 下次直播何伟嘚瑟地讲", url:"BV1vsJG6VEJk", up:"月上柳梢头的夜", type:"react" },
+  { date:"2026-06-06", title:"一些直播回顾之杀青kisskiss", url:"BV1psjP68EZf", up:"小鱼泡泡泡泡面", type:"react" },
+  { date:"2026-06-12", title:"【希朝】6.12双人直播全程高清完整版（带中字字幕）", url:"BV13iJ56CEpv", up:"何如存在", type:"live" },
+  { date:"2026-06-12", title:"6.12 全民K歌希朝双人直播录屏", url:"BV1BJJ56sEz4", up:"锅啊锅", type:"live" },
+  { date:"2026-06-12", title:"【希希朝朝】全民k歌歌房直播全程 字幕版", url:"BV1jWJ56QEQR", up:"他是他的ta", type:"live" },
+  { date:"2026-06-12", title:"何昶希&何衍朝 2026.6.12 全民K歌直播", url:"BV1EnJ569E5q", up:"咕咕CYL", type:"live" },
+  { date:"2026-06-12", title:"希朝｜20260612 QQ音乐/全民k歌歌房直播完整版", url:"BV15bJ56EEYk", up:"是Da璟子啊", type:"live" },
+  { date:"2026-06-12", title:"6月12日全民k歌直播 何昶希何衍朝", url:"BV1w9J56wENa", up:"EX宝", type:"live" },
+  { date:"2026-06-12", title:"何昶希&何衍朝2026.6.12全民K歌直播", url:"BV17nJ569E3b", up:"Rain小雨yu", type:"live" },
+  { date:"2026-06-12", title:"6.12《极昼HE·RiZON》专辑直播 希希朝朝合唱", url:"BV1AFJJ6CECr", up:"幸运的多多", type:"live" },
+  { date:"2026-06-12", title:"【希朝】260612全民K歌双人直播", url:"BV1C5E96ME7m", up:"万出穗", type:"live" },
+  { date:"2026-06-12", title:"260612｜希朝全民k歌直播全程", url:"BV1z8Ju6GEcC", up:"某耶也_", type:"live" },
+  { date:"2026-06-12", title:"0612直播🍬两人大搞灯下黑那套", url:"BV1FAJJ6rE19", up:"每日一嗑QAQ", type:"react" },
+  { date:"2026-06-12", title:"0612直播丨何伟不语，只是一味地忙碌", url:"BV1R5JJ6AEoW", up:"放羊的人在熟睡__", type:"react" },
+  { date:"2026-06-12", title:"【希朝361】HW朝管严 何伟又美了 何伟高攻低防", url:"BV1MCEg6bE2x", up:"李峋_Arthur", type:"react" },
+  { date:"2026-06-12", title:"【希朝相伴直播reaction】第一场直播", url:"BV1AiJK6rEX7", up:"什么都爱磕kk", type:"react" },
+  { date:"2026-06-12", title:"【存档 希朝 收官场直播浓缩版】", url:"BV1x2JA6TEqZ", up:"不挑酱和事儿多君", type:"react" },
+  { date:"2026-06-12", title:"【希希朝朝】全民K歌直播同事哥又暴言暴语", url:"BV1VGJP6nEV1", up:"小7嗑糖补给站", type:"react" },
+  { date:"2026-06-12", title:"回看第一次直播的朝朝，一秒爱上小黑狗", url:"BV1uAJN6LEGR", up:"梨栗笠狸", type:"react" },
+  { date:"2026-06-12", title:"【希朝铁锅炖直播】双人嘴炮相声流reaction", url:"BV13XJs6kE8d", up:"江江在哪", type:"react" },
+  { date:"2026-06-12", title:"【361直播2reaction】物料就像海绵里的水", url:"BV1b4jg6pE5G", up:"大力水手不吃菠菜DD", type:"react" },
+  { date:"2026-06-12", title:"和通讯录师兄哥re戛纳直播", url:"BV1w5E96MEpV", up:"伊丽莎白的夏尔", type:"react" },
+  { date:"2026-06-15", title:"何昶希0615肌肤未来快问快答", url:"BV1SvjN6rEVm", up:"_JNC_", type:"live" },
+  { date:"2026-06-16", title:"希希朝朝香港直播reaction！想要报警的程度……", url:"BV1nmjG62EDd", up:"快乐小饼干儿", type:"react" }
 ];
+
+// ====== 数据管理 ======
+let videos = [];
+
+function loadData() {
+    try {
+        const saved = localStorage.getItem('xizhao_videos');
+        if (saved) {
+            videos = JSON.parse(saved);
+        } else {
+            videos = JSON.parse(JSON.stringify(DEFAULT_VIDEOS));
+        }
+    } catch(e) {
+        videos = JSON.parse(JSON.stringify(DEFAULT_VIDEOS));
+    }
+}
+
+function saveData() {
+    localStorage.setItem('xizhao_videos', JSON.stringify(videos));
+}
 
 // ====== 渲染 ======
 function render() {
@@ -468,52 +248,143 @@ function render() {
         if (!groups[v.date]) groups[v.date] = [];
         groups[v.date].push(v);
     });
-
     const sortedDates = Object.keys(groups).sort().reverse();
-    document.getElementById('totalDates').textContent = sortedDates.length;
     document.getElementById('totalVideos').textContent = videos.length;
 
     const container = document.getElementById('content');
     container.innerHTML = '';
-    let globalIdx = 0;
+    if (document.getElementById('btnEdit').classList.contains('active')) {
+        container.classList.add('edit-mode');
+    } else {
+        container.classList.remove('edit-mode');
+    }
 
+    let globalIdx = 0;
     sortedDates.forEach(date => {
         const items = groups[date];
-        const label = items[0].label;
         const section = document.createElement('div');
         section.className = 'date-group';
-
         const liveCount = items.filter(v => v.type === 'live').length;
         const reactCount = items.filter(v => v.type === 'react').length;
-        let typeTags = '';
-        if (liveCount > 0) typeTags += `<span class="tag orange">${liveCount} 录屏</span>`;
-        if (reactCount > 0) typeTags += `<span class="tag">${reactCount} 反应</span>`;
-
+        let tags = '';
+        if (liveCount) tags += `<span class="tag live">${liveCount} 录屏</span>`;
+        if (reactCount) tags += `<span class="tag">${reactCount} 反应</span>`;
         const heading = document.createElement('h2');
-        heading.innerHTML = `<span class="date-badge">${label}</span> ${typeTags}`;
+        heading.innerHTML = `<span class="date-badge">${date}</span> ${tags}`;
         section.appendChild(heading);
 
-        items.forEach(v => {
+        items.forEach((v, idx) => {
             globalIdx++;
             const fullUrl = v.url.startsWith('http') ? v.url : `https://www.bilibili.com/video/${v.url}`;
             const card = document.createElement('div');
             card.className = 'video-card';
-            const typeIcon = v.type === 'live' ? '🔴' : '🟡';
-            const typeLabel = v.type === 'live' ? '直播录屏' : 'Reaction';
+            const icon = v.type === 'live' ? '🔴' : '🟡';
+            const label = v.type === 'live' ? '直播录屏' : 'Reaction';
+            // Find the index in videos array
+            const realIdx = videos.indexOf(v);
 
             card.innerHTML = `
                 <div class="num">${globalIdx}</div>
                 <div class="info">
-                    <div class="title">${typeIcon} ${v.title}</div>
-                    <div class="meta">${v.up || '未知'} · ${typeLabel}</div>
+                    <div class="title">${icon} ${v.title}</div>
+                    <div class="meta">${v.up || '未知'} · ${label}</div>
                 </div>
                 <a href="${fullUrl}" target="_blank" rel="noopener">▶ 观看</a>
+                <div class="edit-btn-group">
+                    <button onclick="event.stopPropagation();editVideo(${realIdx})">✏️</button>
+                    <button class="del" onclick="event.stopPropagation();deleteVideo(${realIdx})">🗑️</button>
+                </div>
             `;
+            if (container.classList.contains('edit-mode')) {
+                card.onclick = () => editVideo(realIdx);
+            }
             section.appendChild(card);
         });
         container.appendChild(section);
     });
 }
+
+// ====== 编辑功能 ======
+let editingIndex = -1;
+
+function toggleEdit() {
+    const btn = document.getElementById('btnEdit');
+    btn.classList.toggle('active');
+    render();
+}
+
+function editVideo(idx) {
+    editingIndex = idx;
+    const v = videos[idx];
+    document.getElementById('panelTitle').textContent = '✏️ 编辑视频';
+    document.getElementById('editDate').value = v.date;
+    document.getElementById('editTitle').value = v.title;
+    document.getElementById('editUrl').value = v.url;
+    document.getElementById('editUp').value = v.up || '';
+    document.getElementById('editType').value = v.type;
+    document.getElementById('editIndex').value = idx;
+    document.getElementById('editPanel').classList.add('show');
+    document.getElementById('editPanel').scrollIntoView({behavior:'smooth'});
+}
+
+function saveVideo() {
+    const date = document.getElementById('editDate').value;
+    const title = document.getElementById('editTitle').value.trim();
+    const url = document.getElementById('editUrl').value.trim();
+    const up = document.getElementById('editUp').value.trim();
+    const type = document.getElementById('editType').value;
+    const idx = parseInt(document.getElementById('editIndex').value);
+
+    if (!date || !title || !url) { alert('请填写日期、标题和链接'); return; }
+
+    const obj = { date, title, url, up, type };
+
+    if (idx >= 0 && idx < videos.length) {
+        videos[idx] = obj;
+    } else {
+        videos.push(obj);
+    }
+
+    saveData();
+    cancelEdit();
+    render();
+}
+
+function deleteVideo(idx) {
+    if (!confirm(`确定删除「${videos[idx].title}」？`)) return;
+    videos.splice(idx, 1);
+    saveData();
+    render();
+}
+
+function cancelEdit() {
+    editingIndex = -1;
+    document.getElementById('editPanel').classList.remove('show');
+    document.getElementById('editIndex').value = '-1';
+}
+
+function exportData() {
+    const json = JSON.stringify(videos, null, 2);
+    document.getElementById('jsonData').value = json;
+    document.getElementById('editPanel').classList.add('show');
+}
+
+function importData() {
+    try {
+        const data = JSON.parse(document.getElementById('jsonData').value);
+        if (!Array.isArray(data)) { alert('格式错误：需要JSON数组'); return; }
+        videos = data;
+        saveData();
+        render();
+        alert(`导入成功！共 ${data.length} 个视频`);
+        cancelEdit();
+    } catch(e) {
+        alert('JSON解析失败：' + e.message);
+    }
+}
+
+// ====== 启动 ======
+loadData();
 render();
 </script>
 </body>
